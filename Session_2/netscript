@@ -1,0 +1,23 @@
+#!/bin/bash
+
+Target_URL="google.com"
+Target_URL2="ebay.com"
+
+echo "First, let's get our IP Address..."
+ifconfig
+echo ""
+echo "Starting to Ping..."
+ping -c 5 $Target_URL
+echo ""
+echo "Starting to Ping second URL..."
+ping -c 5 $Target_URL2
+echo
+echo "Starting nslookup..."
+nslookup $Target_URL
+echo "Looking for google.com on whois..."
+whois $Target_URL
+#Traceroute won't work using NAT
+echo "Starting traceroute..."
+traceroute $Target_URL
+
+#End of Script
